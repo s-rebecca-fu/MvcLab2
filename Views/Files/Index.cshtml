@@ -1,0 +1,16 @@
+﻿@model IEnumerable<string>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+
+<ul>
+    @foreach (var p in Model)
+    {
+        var name = Path.GetFileName(p);
+        <li>@Html.ActionLink(name, "SelectedTextDetail", new { id = Path.GetFileNameWithoutExtension(p)}) </li>
+    }
+</ul>
